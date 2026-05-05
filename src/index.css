@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#060606] text-[#FAF6EE] font-sans antialiased selection:bg-[#C89B5A] selection:text-[#060606];
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  /* Cinematic Noise Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060606;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C89B5A44;
+  }
+}
+
+@layer components {
+  .luxury-border {
+    @apply border-[#C89B5A]/20;
+  }
+  
+  .btn-premium {
+    @apply relative px-12 py-5 overflow-hidden transition-all duration-500 bg-[#C89B5A] text-[#060606] text-[11px] uppercase tracking-[0.3em] font-bold hover:bg-[#FAF6EE] hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-outline-premium {
+    @apply relative px-12 py-5 overflow-hidden transition-all duration-500 border border-[#FAF6EE]/20 text-[#FAF6EE] text-[11px] uppercase tracking-[0.3em] hover:border-[#C89B5A] hover:text-[#C89B5A];
+  }
+
+  .text-reveal {
+    @apply inline-block overflow-hidden;
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 50px -10px rgba(200, 155, 90, 0.15);
+  }
+
+  .section-number {
+    @apply font-serif text-[#C89B5A]/20 text-8xl absolute -left-10 -top-10 select-none;
+  }
+
+  .bg-radial-luxury {
+    background: radial-gradient(circle at 50% 50%, #16110C 0%, #060606 100%);
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-md border border-white/5;
+  }
+
+  .vignette {
+    box-shadow: inset 0 0 150px 50px rgba(0,0,0,0.9);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .text-reveal-mask {
+    mask-image: linear-gradient(to right, white, white, transparent);
+    mask-size: 200% 100%;
+    mask-position: 0% 0%;
+  }
+}
