@@ -134,7 +134,7 @@ export const About = () => {
                  className="pt-4"
               >
                 <button className="inline-flex items-center gap-8 group">
-                  <span className="text-[#E3C98A] text-[12px] uppercase tracking-[0.5em] font-bold transition-all group-hover:tracking-[0.7em]">Descubrir o nosso ADN</span>
+                  <span className="text-[#E3C98A] text-[12px] uppercase tracking-[0.5em] font-bold transition-all group-hover:tracking-[0.7em]">Descobrir o nosso ADN</span>
                   <div className="relative w-16 h-[1px] bg-[#C89B5A] overflow-hidden">
                     <motion.div 
                       animate={{ x: ["-100%", "100%"] }}

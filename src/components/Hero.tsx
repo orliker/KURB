@@ -100,7 +100,7 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row items-center gap-10"
           >
             <button className="btn-premium w-full sm:w-auto px-16 py-6 text-sm">
-              Descubrir o Menu
+              Descobrir o menu
             </button>
             <button className="btn-outline-premium w-full sm:w-auto px-16 py-6 text-sm overflow-hidden group">
               <span className="relative z-10">A Nossa Essência</span>
